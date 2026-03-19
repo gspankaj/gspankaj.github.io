@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Post Title — Your Name</title>
+  <title>Post Title — Pankaj G.S.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
   <style>
@@ -30,138 +30,45 @@
     .nav-links a { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .nav-links a:hover { color: var(--accent); }
 
-    .post-wrapper {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 9rem 2.5rem 6rem;
-    }
+    .post-wrapper { max-width: 720px; margin: 0 auto; padding: 9rem 2.5rem 6rem; }
 
-    .back-link {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      font-family: var(--font-mono); font-size: 0.75rem;
-      color: var(--muted); text-decoration: none;
-      letter-spacing: 0.05em;
-      margin-bottom: 3rem;
-      transition: color 0.2s;
-    }
+    .back-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); text-decoration: none; margin-bottom: 3rem; transition: color 0.2s; }
     .back-link:hover { color: var(--accent); }
 
     .post-header { margin-bottom: 3rem; }
     .post-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
-    .post-tag {
-      font-family: var(--font-mono); font-size: 0.65rem;
-      padding: 0.2rem 0.6rem;
-      background: rgba(200,240,78,0.08); color: var(--accent); border-radius: 2px;
-    }
-    .post-header h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 5vw, 3.25rem);
-      font-weight: 800; line-height: 1.1;
-      letter-spacing: -1.5px;
-      margin-bottom: 1.25rem;
-    }
-    .post-meta-row {
-      display: flex; align-items: center; gap: 1.5rem;
-      font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted);
-    }
+    .post-tag { font-family: var(--font-mono); font-size: 0.65rem; padding: 0.2rem 0.6rem; background: rgba(200,240,78,0.08); color: var(--accent); border-radius: 2px; }
+    .post-header h1 { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.25rem); font-weight: 800; line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 1.25rem; }
+    .post-meta-row { display: flex; align-items: center; gap: 1.5rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); }
     .post-meta-row .author { color: var(--text); }
+    .post-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
 
-    .post-divider {
-      border: none; border-top: 1px solid var(--border);
-      margin: 2.5rem 0;
-    }
-
-    /* ─── PROSE STYLES ─── */
     .post-body { font-family: var(--font-prose); font-size: 1.05rem; line-height: 1.85; color: #ccc; }
     .post-body p { margin-bottom: 1.5rem; }
-    .post-body h2 {
-      font-family: var(--font-display); font-size: 1.5rem; font-weight: 700;
-      color: var(--text); letter-spacing: -0.5px;
-      margin: 2.5rem 0 1rem;
-    }
-    .post-body h3 {
-      font-family: var(--font-display); font-size: 1.15rem; font-weight: 700;
-      color: var(--text); margin: 2rem 0 0.75rem;
-    }
+    .post-body h2 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 700; color: var(--text); letter-spacing: -0.5px; margin: 2.5rem 0 1rem; }
+    .post-body h3 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--text); margin: 2rem 0 0.75rem; }
     .post-body strong { color: var(--text); font-weight: 600; }
-    .post-body em { font-style: italic; }
     .post-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
-    .post-body a:hover { opacity: 0.8; }
     .post-body ul, .post-body ol { margin: 0 0 1.5rem 1.5rem; }
     .post-body li { margin-bottom: 0.5rem; }
-    .post-body blockquote {
-      border-left: 3px solid var(--accent);
-      padding: 0.5rem 0 0.5rem 1.5rem;
-      margin: 2rem 0;
-      font-style: italic;
-      color: #999;
-    }
-    .post-body code {
-      font-family: var(--font-mono);
-      font-size: 0.85em;
-      background: var(--surface);
-      padding: 0.15em 0.4em;
-      border-radius: 3px;
-      color: var(--accent);
-    }
-    .post-body pre {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.5rem;
-      overflow-x: auto;
-      margin: 2rem 0;
-    }
-    .post-body pre code {
-      background: none; padding: 0;
-      font-size: 0.85rem; color: #ccc;
-    }
+    .post-body blockquote { border-left: 3px solid var(--accent); padding: 0.5rem 0 0.5rem 1.5rem; margin: 2rem 0; font-style: italic; color: #999; }
+    .post-body code { font-family: var(--font-mono); font-size: 0.85em; background: var(--surface); padding: 0.15em 0.4em; border-radius: 3px; color: var(--accent); }
+    .post-body pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; overflow-x: auto; margin: 2rem 0; }
+    .post-body pre code { background: none; padding: 0; font-size: 0.85rem; color: #ccc; }
 
-    /* ─── AUTHOR BIO ─── */
-    .author-card {
-      margin-top: 4rem;
-      padding: 2rem;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      display: flex; gap: 1.5rem; align-items: flex-start;
-    }
-    .author-avatar {
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-display); font-weight: 800; font-size: 1.2rem;
-      color: #0d0d0d;
-    }
+    .author-card { margin-top: 4rem; padding: 2rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; display: flex; gap: 1.5rem; align-items: flex-start; }
+    .author-avatar { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #4ef0c8); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; color: #0d0d0d; }
     .author-name { font-family: var(--font-display); font-weight: 700; margin-bottom: 0.25rem; }
     .author-bio { font-size: 0.875rem; color: var(--muted); }
 
-    /* ─── NAV POSTS ─── */
-    .post-navigation {
-      margin-top: 3rem;
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-    .post-nav-link {
-      padding: 1.25rem;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      text-decoration: none; color: inherit;
-      transition: all 0.2s;
-    }
+    .post-navigation { margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .post-nav-link { padding: 1.25rem; border: 1px solid var(--border); border-radius: 8px; text-decoration: none; color: inherit; transition: all 0.2s; }
     .post-nav-link:hover { border-color: var(--accent); }
     .post-nav-link.next { text-align: right; }
     .post-nav-dir { font-family: var(--font-mono); font-size: 0.65rem; color: var(--muted); margin-bottom: 0.4rem; }
     .post-nav-title { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; line-height: 1.3; }
 
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem 2.5rem;
-      display: flex; justify-content: space-between; align-items: center;
-      font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted);
-    }
+    footer { border-top: 1px solid var(--border); padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); }
 
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
@@ -174,7 +81,7 @@
 <body>
 
   <nav>
-    <a href="index.html" class="nav-logo">YourName.dev</a>
+    <a href="index.html" class="nav-logo">pankaj.gs</a>
     <ul class="nav-links">
       <li><a href="index.html#about">about</a></li>
       <li><a href="index.html#projects">projects</a></li>
@@ -190,106 +97,90 @@
 
     <header class="post-header">
       <div class="post-tags">
-        <span class="post-tag">web dev</span>
-        <span class="post-tag">lessons</span>
+        <span class="post-tag">defcon</span>
+        <span class="post-tag">dark web</span>
+        <span class="post-tag">security</span>
       </div>
-      <h1>What I Learned Building My First Web App</h1>
+      <!-- UPDATE THE TITLE BELOW FOR EACH NEW POST -->
+      <h1>What It's Like Presenting at DEF CON as a Student</h1>
       <div class="post-meta-row">
-        <span>January 15, 2025</span>
+        <span>Coming Soon</span>
         <span>·</span>
-        <span>6 min read</span>
+        <span>~8 min read</span>
         <span>·</span>
-        <span class="author">Your Name</span>
+        <span class="author">Gajakosh Shekar Pankaj</span>
       </div>
     </header>
 
     <hr class="post-divider" />
 
-    <!-- ═══════════════════════════════════════════════════ -->
-    <!--  YOUR POST CONTENT GOES HERE                        -->
-    <!--  Replace everything inside .post-body              -->
-    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- ═══════════════════════════════════════════════ -->
+    <!--  REPLACE EVERYTHING INSIDE .post-body          -->
+    <!--  WITH YOUR ACTUAL BLOG POST CONTENT            -->
+    <!-- ═══════════════════════════════════════════════ -->
     <article class="post-body">
 
       <p>
-        Six months ago I decided to build my first "real" web app — not a tutorial project, but something I actually wanted to exist. This is the honest account of what happened, what I broke, and what I'd do differently.
+        This post is coming soon. I'm writing up the full story of how I built the Dark Web Recon tool, how it got selected for DEF CON and the Arab International Cybersecurity Conference in Bahrain, and what the experience of presenting there as a student was actually like.
       </p>
 
-      <h2>The Idea</h2>
+      <h2>How to Use This Template</h2>
 
       <p>
-        My idea was simple: a <strong>task manager</strong> that grouped tasks by project. Basic stuff. I figured it would take two weeks. It took two months.
+        To write a new blog post, duplicate this file (e.g. <code>post-defcon.html</code>), update the title and tags in the header, and replace this content with your writing. The styles below will handle everything else.
       </p>
 
-      <p>
-        That gap between "how long I thought it would take" and "how long it actually took" is the most universal experience in software development, and nobody tells you this before you start.
-      </p>
-
-      <h2>Mistake #1: Skipping the Plan</h2>
+      <h2>Supported Formatting</h2>
 
       <p>
-        I opened VS Code and started typing HTML immediately. No wireframe, no data model, nothing. By week two I had spaghetti code and was rewriting half of it.
+        You can use <strong>bold text</strong>, <em>italic text</em>, and inline <code>code snippets</code>. You can also link to things like <a href="https://doi.org/10.21203/rs.3.rs-8386211/v1">your research preprint</a>.
       </p>
 
       <blockquote>
-        Spending 30 minutes planning can save you 3 hours of refactoring. I wish someone had told me this on day one.
+        Block quotes look like this — great for highlighting a key insight or memorable quote from a conference.
       </blockquote>
 
-      <p>
-        Now I sketch on paper first. Even a rough box-and-arrow diagram of how the data flows makes a huge difference.
-      </p>
+      <h2>Code Blocks</h2>
 
-      <h2>Mistake #2: Not Using Git From Day One</h2>
+      <pre><code># Example: a simple Python snippet
+import requests
 
-      <p>
-        I started using Git only after two weeks of coding. That means my early history is gone. Now I <code>git commit</code> after every meaningful change, even tiny ones.
-      </p>
+response = requests.get("https://example.com")
+print(response.status_code)</code></pre>
 
-      <pre><code># The commands I use every single day now
-git add .
-git commit -m "feat: add task filtering by project"
-git push origin main</code></pre>
-
-      <h2>What I'd Tell Myself</h2>
+      <h2>Lists</h2>
 
       <ul>
-        <li><strong>Start smaller than you think.</strong> Cut the scope in half, then cut it again.</li>
-        <li><strong>Read error messages carefully.</strong> They usually tell you exactly what's wrong.</li>
-        <li><strong>Git early, Git often.</strong> You'll thank yourself later.</li>
-        <li><strong>Show your work to others.</strong> Even if it's embarrassing. Feedback is gold.</li>
+        <li>Bullet point one</li>
+        <li>Bullet point two</li>
+        <li>Bullet point three</li>
       </ul>
-
-      <p>
-        The project isn't perfect. But it exists, it works, and I learned more from building it than from any course I've taken. That's the whole point.
-      </p>
 
     </article>
 
-    <!-- AUTHOR BIO -->
     <div class="author-card">
-      <div class="author-avatar">YN</div>
+      <div class="author-avatar">GP</div>
       <div>
-        <div class="author-name">Your Name</div>
-        <p class="author-bio">Fresher developer documenting the journey. Building in public, one bug at a time.</p>
+        <div class="author-name">Gajakosh Shekar Pankaj</div>
+        <p class="author-bio">Cloud &amp; Cybersecurity practitioner from Hyderabad. DEF CON delegate, Curtin University research intern, IEEE CIS Chair. Building in public.</p>
       </div>
     </div>
 
-    <!-- POST NAVIGATION -->
     <div class="post-navigation">
-      <a href="post.html" class="post-nav-link prev">
-        <div class="post-nav-dir">← Previous</div>
-        <div class="post-nav-title">Understanding Git: A Beginner's Honest Take</div>
+      <a href="blog.html" class="post-nav-link prev">
+        <div class="post-nav-dir">← Back</div>
+        <div class="post-nav-title">All Posts</div>
       </a>
-      <a href="post.html" class="post-nav-link next">
+      <a href="blog.html" class="post-nav-link next">
         <div class="post-nav-dir">Next →</div>
-        <div class="post-nav-title">30 Days of Coding — What Actually Happened</div>
+        <div class="post-nav-title">More coming soon</div>
       </a>
     </div>
 
   </div>
 
   <footer>
-    <span>© 2025 Your Name.</span>
+    <span>© 2025 Gajakosh Shekar Pankaj.</span>
     <a href="blog.html" style="color: var(--accent); text-decoration: none; font-family: var(--font-mono); font-size: 0.72rem;">← Back to blog</a>
   </footer>
 
