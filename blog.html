@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog — Your Name</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0d0d0d; --surface: #161616; --border: #252525;
+      --accent: #c8f04e; --accent2: #4ef0c8;
+      --text: #e8e8e8; --muted: #666;
+      --font-display: 'Syne', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); line-height: 1.6; overflow-x: hidden; }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      background: rgba(13,13,13,0.85); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; color: var(--accent); text-decoration: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+    .page-header {
+      padding: 10rem 2.5rem 4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .page-eyebrow { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; }
+    .page-header h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; letter-spacing: -2px; line-height: 1.05; }
+    .page-header p { font-size: 1.05rem; color: var(--muted); margin-top: 1rem; max-width: 500px; }
+
+    .blog-layout { max-width: 900px; padding: 4rem 2.5rem; }
+
+    .post-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 2rem;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none; color: inherit;
+      transition: all 0.2s;
+    }
+    .post-item:hover .post-title { color: var(--accent); }
+    .post-item:last-child { border-bottom: none; }
+
+    .post-date {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      line-height: 1.6;
+      padding-top: 0.25rem;
+    }
+    .post-date .day { font-size: 1.6rem; font-weight: 500; color: var(--text); display: block; line-height: 1; margin-bottom: 0.2rem; }
+
+    .post-content {}
+    .post-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.75rem; }
+    .post-tag {
+      font-family: var(--font-mono); font-size: 0.65rem;
+      padding: 0.15rem 0.6rem;
+      background: rgba(200,240,78,0.08); color: var(--accent); border-radius: 2px;
+    }
+    .post-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.6rem; transition: color 0.2s; }
+    .post-excerpt { font-size: 0.9rem; color: var(--muted); line-height: 1.75; }
+    .post-meta { display: flex; gap: 1.5rem; margin-top: 0.75rem; font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 2.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted);
+    }
+
+    @media (max-width: 768px) {
+      .post-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .post-date .day { display: inline; font-size: 1rem; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">YourName.dev</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">about</a></li>
+      <li><a href="index.html#projects">projects</a></li>
+      <li><a href="blog.html" class="active">blog</a></li>
+      <li><a href="resume.html">resume</a></li>
+      <li><a href="index.html#contact">contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <p class="page-eyebrow">// writing</p>
+    <h1>My Blog</h1>
+    <p>Notes, learnings, and reflections from my journey as a developer.</p>
+  </div>
+
+  <div class="blog-layout">
+
+    <!-- POST 3 (most recent first) -->
+    <a href="post.html" class="post-item">
+      <div class="post-date">
+        <span class="day">10</span>
+        MAR<br>2025
+      </div>
+      <div class="post-content">
+        <div class="post-tags">
+          <span class="post-tag">journey</span>
+          <span class="post-tag">productivity</span>
+        </div>
+        <div class="post-title">30 Days of Coding — What Actually Happened</div>
+        <p class="post-excerpt">I tried the 30-day coding challenge. Here's an honest account of what worked, what didn't, and whether it's worth doing as a beginner.</p>
+        <div class="post-meta">
+          <span>5 min read</span>
+          <span>→ Read post</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- POST 2 -->
+    <a href="post.html" class="post-item">
+      <div class="post-date">
+        <span class="day">02</span>
+        FEB<br>2025
+      </div>
+      <div class="post-content">
+        <div class="post-tags">
+          <span class="post-tag">git</span>
+          <span class="post-tag">tools</span>
+        </div>
+        <div class="post-title">Understanding Git: A Beginner's Honest Take</div>
+        <p class="post-excerpt">Git confused me for weeks. Here's the mental model that finally made it click for me — branches, commits, and all.</p>
+        <div class="post-meta">
+          <span>4 min read</span>
+          <span>→ Read post</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- POST 1 -->
+    <a href="post.html" class="post-item">
+      <div class="post-date">
+        <span class="day">15</span>
+        JAN<br>2025
+      </div>
+      <div class="post-content">
+        <div class="post-tags">
+          <span class="post-tag">web dev</span>
+          <span class="post-tag">lessons</span>
+        </div>
+        <div class="post-title">What I Learned Building My First Web App</div>
+        <p class="post-excerpt">A walkthrough of the mistakes I made, the concepts that clicked, and everything I'd do differently now as a newer dev.</p>
+        <div class="post-meta">
+          <span>6 min read</span>
+          <span>→ Read post</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <footer>
+    <span>© 2025 Your Name.</span>
+    <a href="index.html" style="color: var(--accent); text-decoration: none; font-family: var(--font-mono); font-size: 0.72rem;">← Back to home</a>
+  </footer>
+
+</body>
+</html>
