@@ -3,332 +3,117 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Your Name — Developer</title>
+  <title>Pankaj G.S. — Cloud & Cybersecurity</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #0d0d0d;
-      --surface: #161616;
-      --border: #252525;
-      --accent: #c8f04e;
-      --accent2: #4ef0c8;
-      --text: #e8e8e8;
-      --muted: #666;
+      --bg: #0d0d0d; --surface: #161616; --border: #252525;
+      --accent: #c8f04e; --accent2: #4ef0c8;
+      --text: #e8e8e8; --muted: #666;
       --font-display: 'Syne', sans-serif;
       --font-mono: 'DM Mono', monospace;
       --font-body: 'DM Sans', sans-serif;
     }
-
     html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* ─── NAV ─── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1.25rem 2.5rem;
-      background: rgba(13,13,13,0.85);
-      backdrop-filter: blur(12px);
+      background: rgba(13,13,13,0.85); backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
-    .nav-logo {
-      font-family: var(--font-display);
-      font-weight: 800; font-size: 1.2rem;
-      color: var(--accent);
-      text-decoration: none;
-      letter-spacing: -0.5px;
-    }
+    .nav-logo { font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; color: var(--accent); text-decoration: none; letter-spacing: -0.5px; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      transition: color 0.2s;
-    }
+    .nav-links a { font-family: var(--font-mono); font-size: 0.8rem; color: var(--muted); text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
     .nav-links a:hover { color: var(--accent); }
 
-    /* ─── HERO ─── */
     .hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column; justify-content: center;
-      padding: 8rem 2.5rem 4rem;
-      position: relative;
-      overflow: hidden;
+      min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+      padding: 8rem 2.5rem 4rem; position: relative; overflow: hidden;
     }
     .hero::before {
-      content: '';
-      position: absolute; top: -20%; right: -10%;
+      content: ''; position: absolute; top: -20%; right: -10%;
       width: 600px; height: 600px;
       background: radial-gradient(circle, rgba(200,240,78,0.07) 0%, transparent 70%);
       pointer-events: none;
     }
-    .hero-eyebrow {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--accent);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 0.6s ease forwards 0.2s;
-    }
-    .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(3rem, 8vw, 7rem);
-      font-weight: 800;
-      line-height: 1.0;
-      letter-spacing: -2px;
-      max-width: 900px;
-      opacity: 0;
-      animation: fadeUp 0.7s ease forwards 0.4s;
-    }
+    .hero-eyebrow { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.6s ease forwards 0.2s; }
+    .hero h1 { font-family: var(--font-display); font-size: clamp(3rem, 8vw, 6.5rem); font-weight: 800; line-height: 1.0; letter-spacing: -2px; max-width: 950px; opacity: 0; animation: fadeUp 0.7s ease forwards 0.4s; }
     .hero h1 span { color: var(--accent); }
-    .hero-sub {
-      font-size: 1.15rem;
-      color: var(--muted);
-      margin-top: 1.5rem;
-      max-width: 500px;
-      line-height: 1.7;
-      opacity: 0;
-      animation: fadeUp 0.7s ease forwards 0.6s;
-    }
-    .hero-cta {
-      display: flex; gap: 1rem; flex-wrap: wrap;
-      margin-top: 2.5rem;
-      opacity: 0;
-      animation: fadeUp 0.7s ease forwards 0.8s;
-    }
-    .btn {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.75rem 1.75rem;
-      font-family: var(--font-mono);
-      font-size: 0.82rem;
-      letter-spacing: 0.05em;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: all 0.2s;
-      cursor: pointer;
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: #0d0d0d;
-      font-weight: 500;
-    }
+    .hero-sub { font-size: 1.1rem; color: var(--muted); margin-top: 1.5rem; max-width: 600px; line-height: 1.75; opacity: 0; animation: fadeUp 0.7s ease forwards 0.6s; }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; opacity: 0; animation: fadeUp 0.7s ease forwards 0.75s; }
+    .hero-badge { font-family: var(--font-mono); font-size: 0.68rem; padding: 0.3rem 0.8rem; border: 1px solid rgba(200,240,78,0.3); border-radius: 2px; color: var(--accent); letter-spacing: 0.04em; }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2.5rem; opacity: 0; animation: fadeUp 0.7s ease forwards 0.8s; }
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.75rem; font-family: var(--font-mono); font-size: 0.82rem; letter-spacing: 0.05em; border-radius: 4px; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; }
+    .btn-primary { background: var(--accent); color: #0d0d0d; font-weight: 500; }
     .btn-primary:hover { background: #d8ff5e; transform: translateY(-2px); }
-    .btn-outline {
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
+    .btn-outline { border: 1px solid var(--border); color: var(--text); }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .hero-scroll { position: absolute; bottom: 2.5rem; left: 2.5rem; display: flex; align-items: center; gap: 0.75rem; font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); letter-spacing: 0.1em; opacity: 0; animation: fadeUp 0.7s ease forwards 1.2s; }
+    .scroll-line { width: 40px; height: 1px; background: var(--muted); animation: expandLine 1s ease forwards 1.5s; transform-origin: left; transform: scaleX(0); }
 
-    .hero-scroll {
-      position: absolute; bottom: 2.5rem; left: 2.5rem;
-      display: flex; align-items: center; gap: 0.75rem;
-      font-family: var(--font-mono); font-size: 0.7rem;
-      color: var(--muted); letter-spacing: 0.1em;
-      opacity: 0; animation: fadeUp 0.7s ease forwards 1.2s;
-    }
-    .scroll-line {
-      width: 40px; height: 1px; background: var(--muted);
-      animation: expandLine 1s ease forwards 1.5s;
-      transform-origin: left; transform: scaleX(0);
-    }
-
-    /* ─── SECTION BASE ─── */
     section { padding: 6rem 2.5rem; }
-    .section-label {
-      font-family: var(--font-mono);
-      font-size: 0.7rem; color: var(--accent);
-      letter-spacing: 0.2em; text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800; line-height: 1.1;
-      letter-spacing: -1px;
-      margin-bottom: 3rem;
-    }
+    .section-label { font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1rem; }
+    .section-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.1; letter-spacing: -1px; margin-bottom: 2.5rem; }
 
-    /* ─── ABOUT ─── */
     #about { background: var(--surface); border-top: 1px solid var(--border); }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: start;
-      max-width: 1100px;
-    }
+    .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 5rem; align-items: start; max-width: 1100px; }
     .about-text p { color: #aaa; line-height: 1.8; margin-bottom: 1rem; }
     .about-text p strong { color: var(--text); }
-    .skills-list {
-      display: flex; flex-wrap: wrap; gap: 0.5rem;
-      margin-top: 1.5rem;
-    }
-    .skill-tag {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      padding: 0.3rem 0.75rem;
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      color: var(--muted);
-      letter-spacing: 0.05em;
-      transition: all 0.2s;
-    }
+    .skills-list { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+    .skill-tag { font-family: var(--font-mono); font-size: 0.72rem; padding: 0.3rem 0.75rem; border: 1px solid var(--border); border-radius: 2px; color: var(--muted); transition: all 0.2s; }
     .skill-tag:hover { border-color: var(--accent); color: var(--accent); }
-    .about-stats {
-      display: flex; flex-direction: column; gap: 2rem;
-    }
-    .stat {
-      border-left: 2px solid var(--accent);
-      padding-left: 1.5rem;
-    }
-    .stat-number {
-      font-family: var(--font-display);
-      font-size: 2.5rem; font-weight: 800;
-      color: var(--accent); line-height: 1;
-    }
+    .about-stats { display: flex; flex-direction: column; gap: 2rem; }
+    .stat { border-left: 2px solid var(--accent); padding-left: 1.5rem; }
+    .stat-number { font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; color: var(--accent); line-height: 1; }
     .stat-label { font-size: 0.85rem; color: var(--muted); margin-top: 0.25rem; }
 
-    /* ─── PROJECTS ─── */
-    #projects { max-width: 1200px; margin: 0 auto; padding: 6rem 2.5rem; }
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 1.5rem;
-    }
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 2rem;
-      transition: all 0.3s;
-      position: relative; overflow: hidden;
-    }
-    .project-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      transform: scaleX(0); transform-origin: left;
-      transition: transform 0.3s;
-    }
+    #projects { border-top: 1px solid var(--border); }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
+    .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 2rem; transition: all 0.3s; position: relative; overflow: hidden; }
+    .project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), var(--accent2)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
     .project-card:hover { border-color: #333; transform: translateY(-4px); }
     .project-card:hover::before { transform: scaleX(1); }
-    .project-icon {
-      font-size: 1.5rem; margin-bottom: 1rem;
-    }
-    .project-title {
-      font-family: var(--font-display);
-      font-size: 1.2rem; font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-    .project-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
-    .project-tags {
-      display: flex; flex-wrap: wrap; gap: 0.4rem;
-      margin-top: 1.25rem;
-    }
-    .project-tag {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      padding: 0.2rem 0.6rem;
-      background: rgba(200,240,78,0.08);
-      color: var(--accent);
-      border-radius: 2px;
-    }
-    .project-links {
-      display: flex; gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    .project-link {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      transition: color 0.2s;
-      display: flex; align-items: center; gap: 0.3rem;
-    }
+    .project-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+    .project-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.4rem; line-height: 1.3; }
+    .project-venue { font-family: var(--font-mono); font-size: 0.67rem; color: var(--accent2); margin-bottom: 0.75rem; letter-spacing: 0.03em; }
+    .project-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.75; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.25rem; }
+    .project-tag { font-family: var(--font-mono); font-size: 0.65rem; padding: 0.2rem 0.6rem; background: rgba(200,240,78,0.08); color: var(--accent); border-radius: 2px; }
+    .project-links { display: flex; gap: 1rem; margin-top: 1.5rem; }
+    .project-link { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     .project-link:hover { color: var(--accent); }
 
-    /* ─── BLOG PREVIEW ─── */
-    #blog { background: var(--surface); border-top: 1px solid var(--border); }
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-      max-width: 1100px;
-    }
-    .blog-card {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 2rem;
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.25s;
-      display: block;
-    }
+    #certs { background: var(--surface); border-top: 1px solid var(--border); }
+    .certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; max-width: 1000px; }
+    .cert-card { border: 1px solid var(--border); border-radius: 6px; padding: 1.25rem 1.5rem; transition: all 0.2s; }
+    .cert-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .cert-icon { font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .cert-name { font-family: var(--font-display); font-size: 0.88rem; font-weight: 700; line-height: 1.3; }
+
+    #blog { border-top: 1px solid var(--border); }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1100px; }
+    .blog-card { border: 1px solid var(--border); border-radius: 8px; padding: 2rem; text-decoration: none; color: inherit; transition: all 0.25s; display: block; }
     .blog-card:hover { border-color: var(--accent); transform: translateY(-3px); }
-    .blog-date {
-      font-family: var(--font-mono);
-      font-size: 0.7rem; color: var(--muted);
-      letter-spacing: 0.08em;
-      margin-bottom: 0.75rem;
-    }
-    .blog-title {
-      font-family: var(--font-display);
-      font-size: 1.15rem; font-weight: 700;
-      line-height: 1.3;
-      margin-bottom: 0.75rem;
-    }
+    .blog-date { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); letter-spacing: 0.08em; margin-bottom: 0.75rem; }
+    .blog-title { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; line-height: 1.3; margin-bottom: 0.75rem; }
     .blog-excerpt { font-size: 0.875rem; color: var(--muted); line-height: 1.7; }
-    .blog-read {
-      display: inline-flex; align-items: center; gap: 0.3rem;
-      font-family: var(--font-mono);
-      font-size: 0.72rem; color: var(--accent);
-      margin-top: 1.25rem;
-    }
+    .blog-read { display: inline-flex; align-items: center; gap: 0.3rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); margin-top: 1.25rem; }
 
-    /* ─── CONTACT ─── */
-    #contact { text-align: center; padding: 8rem 2.5rem; }
+    #contact { text-align: center; border-top: 1px solid var(--border); }
     #contact .section-title { margin-bottom: 1rem; }
-    #contact p { color: var(--muted); max-width: 500px; margin: 0 auto 2.5rem; }
-    .contact-links {
-      display: flex; justify-content: center;
-      flex-wrap: wrap; gap: 1rem;
-    }
+    #contact > p { color: var(--muted); max-width: 500px; margin: 0 auto 2.5rem; }
+    .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
 
-    /* ─── FOOTER ─── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem 2.5rem;
-      display: flex; justify-content: space-between; align-items: center;
-      font-family: var(--font-mono);
-      font-size: 0.72rem; color: var(--muted);
-    }
+    footer { border-top: 1px solid var(--border); padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); }
 
-    /* ─── ANIMATIONS ─── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes expandLine {
-      to { transform: scaleX(1); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes expandLine { to { transform: scaleX(1); } }
 
-    /* ─── RESPONSIVE ─── */
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .nav-links { gap: 1.25rem; }
@@ -341,9 +126,8 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
-    <a href="#" class="nav-logo">YourName.dev</a>
+    <a href="#" class="nav-logo">pankaj.gs</a>
     <ul class="nav-links">
       <li><a href="#about">about</a></li>
       <li><a href="#projects">projects</a></li>
@@ -353,13 +137,18 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
     <p class="hero-eyebrow">👋 Hello, I'm</p>
-    <h1>Your <span>Name</span><br>Here.</h1>
+    <h1>Gajakosh<br><span>Shekar Pankaj.</span></h1>
     <p class="hero-sub">
-      A fresher developer documenting my journey — building projects, writing about what I learn, and figuring it all out one commit at a time.
+      Cloud &amp; Cybersecurity practitioner from Hyderabad. I build security automation tools, research AI-driven threat detection, and document everything I learn along the way.
     </p>
+    <div class="hero-badges">
+      <span class="hero-badge">⬡ DEF CON Delegate</span>
+      <span class="hero-badge">⬡ Research Intern @ Curtin University</span>
+      <span class="hero-badge">⬡ IEEE CIS Chair</span>
+      <span class="hero-badge">⬡ ISC2 Certified</span>
+    </div>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View Projects →</a>
       <a href="resume.html" class="btn btn-outline">My Resume</a>
@@ -370,146 +159,173 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="about-grid">
       <div class="about-text">
         <p class="section-label">// about me</p>
         <h2 class="section-title">Who I Am</h2>
         <p>
-          Hi! I'm <strong>Your Name</strong>, a computer science student / recent graduate based in <strong>Your City</strong>. I'm passionate about building things for the web and constantly learning new technologies.
+          I'm <strong>Pankaj</strong>, a final-year B.Tech (IT) student at GRIET, Hyderabad with a CGPA of <strong>8.87</strong>. I specialise in Cloud Security and Cybersecurity — with hands-on experience in security automation, AI-driven threat detection, and dark web reconnaissance.
         </p>
         <p>
-          This site is my little corner of the internet — where I share the projects I build, the things I learn, and my progress as a developer. Currently open to <strong>internships and entry-level opportunities</strong>.
+          I've had the privilege of presenting research at <strong>DEF CON</strong> and the Arab International Cybersecurity Conference in Bahrain, completed an on-site research internship at <strong>Curtin University, Malaysia</strong> on Explainable AI for malware detection, and served on the organising committee of <strong>Cyber Security Asia 2025</strong> in Kuala Lumpur.
+        </p>
+        <p>
+          Currently <strong>open to internships and entry-level roles</strong> in Cloud Security and Cybersecurity.
         </p>
         <div class="skills-list">
-          <span class="skill-tag">HTML / CSS</span>
-          <span class="skill-tag">JavaScript</span>
           <span class="skill-tag">Python</span>
-          <span class="skill-tag">React</span>
-          <span class="skill-tag">Git & GitHub</span>
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">VS Code</span>
+          <span class="skill-tag">Google Cloud Platform</span>
+          <span class="skill-tag">Bash</span>
+          <span class="skill-tag">C</span>
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">Git</span>
+          <span class="skill-tag">Wireshark</span>
+          <span class="skill-tag">Burp Suite</span>
+          <span class="skill-tag">Nessus</span>
+          <span class="skill-tag">ELK Stack</span>
+          <span class="skill-tag">SHAP / XAI</span>
+          <span class="skill-tag">Scikit-learn</span>
+          <span class="skill-tag">TCP/IP & Subnetting</span>
+          <span class="skill-tag">Windows Active Directory</span>
         </div>
       </div>
       <div class="about-stats">
         <div class="stat">
-          <div class="stat-number">3+</div>
-          <div class="stat-label">Projects completed</div>
+          <div class="stat-number">8.87</div>
+          <div class="stat-label">CGPA — B.Tech IT, GRIET</div>
         </div>
         <div class="stat">
-          <div class="stat-number">6mo</div>
-          <div class="stat-label">Of consistent coding practice</div>
+          <div class="stat-number">3</div>
+          <div class="stat-label">International conferences & research venues</div>
         </div>
         <div class="stat">
-          <div class="stat-number">∞</div>
-          <div class="stat-label">Things left to learn</div>
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Technical events organised as IEEE CIS Chair</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">7</div>
+          <div class="stat-label">Industry certifications earned</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
-  <section id="projects" style="padding: 6rem 2.5rem;">
+  <section id="projects">
     <p class="section-label">// my work</p>
-    <h2 class="section-title">Projects</h2>
+    <h2 class="section-title">Projects & Research</h2>
     <div class="projects-grid">
 
       <div class="project-card">
-        <div class="project-icon">🛒</div>
-        <div class="project-title">Project One Title</div>
-        <p class="project-desc">A short description of what this project does, what problem it solves, and what you learned while building it.</p>
+        <div class="project-icon">🕵️</div>
+        <div class="project-title">Dark Web Recon for Credential Leak Detection</div>
+        <div class="project-venue">▸ DEF CON · Arab Int'l Cybersecurity Conf., Bahrain — Nov 2025</div>
+        <p class="project-desc">Passive, automated framework that crawls Tor hidden services to detect credential and data leaks for companies. Sends real-time Telegram alerts and provides a searchable dashboard that clusters high-risk discoveries.</p>
         <div class="project-tags">
-          <span class="project-tag">HTML</span>
-          <span class="project-tag">CSS</span>
-          <span class="project-tag">JavaScript</span>
+          <span class="project-tag">Python</span>
+          <span class="project-tag">Scrapy</span>
+          <span class="project-tag">NLP</span>
+          <span class="project-tag">BeautifulSoup</span>
+          <span class="project-tag">spaCy</span>
+          <span class="project-tag">Telegram Bot API</span>
+          <span class="project-tag">Tor</span>
         </div>
         <div class="project-links">
-          <a href="#" class="project-link">⬡ Live Demo</a>
-          <a href="#" class="project-link">⌥ GitHub</a>
+          <a href="https://github.com/gspankaj3" target="_blank" class="project-link">⌥ GitHub</a>
         </div>
       </div>
 
       <div class="project-card">
         <div class="project-icon">🧠</div>
-        <div class="project-title">Project Two Title</div>
-        <p class="project-desc">Describe what you built here. Keep it concise but highlight the interesting technical challenge you solved.</p>
+        <div class="project-title">Malware Detection using XAI for Proactive Threat Hunting</div>
+        <div class="project-venue">▸ Research Intern — Curtin University, Miri, Malaysia — Feb–May 2025</div>
+        <p class="project-desc">Framework for extracting actionable insights from black-box AI malware classifiers (90%+ accuracy) using SHAP, ELI5, PDP, ICE, and 2D ALE — surfacing critical features and attack trends for security analysts.</p>
         <div class="project-tags">
           <span class="project-tag">Python</span>
-          <span class="project-tag">Flask</span>
-          <span class="project-tag">SQLite</span>
+          <span class="project-tag">SHAP</span>
+          <span class="project-tag">ELI5</span>
+          <span class="project-tag">PyALE</span>
+          <span class="project-tag">Sklearn</span>
+          <span class="project-tag">NumPy</span>
         </div>
         <div class="project-links">
-          <a href="#" class="project-link">⬡ Live Demo</a>
-          <a href="#" class="project-link">⌥ GitHub</a>
+          <a href="https://doi.org/10.21203/rs.3.rs-8386211/v1" target="_blank" class="project-link">📄 Research Preprint</a>
         </div>
       </div>
 
       <div class="project-card">
-        <div class="project-icon">📊</div>
-        <div class="project-title">Project Three Title</div>
-        <p class="project-desc">Another project description. What did you build? What stack did you use? What did you learn from it?</p>
+        <div class="project-icon">☁️</div>
+        <div class="project-title">Cloud Architecture & Deployment on GCP</div>
+        <div class="project-venue">▸ Google Cloud Computing Foundations — Oct 2024</div>
+        <p class="project-desc">Designed and deployed architectures on Google Cloud Platform using Compute Engine, Cloud Storage, IAM, and VPC networking. Implemented identity and access control and explored IaaS/PaaS/SaaS deployment models.</p>
         <div class="project-tags">
-          <span class="project-tag">React</span>
-          <span class="project-tag">API</span>
-          <span class="project-tag">CSS</span>
+          <span class="project-tag">GCP</span>
+          <span class="project-tag">IAM</span>
+          <span class="project-tag">VPC</span>
+          <span class="project-tag">Compute Engine</span>
+          <span class="project-tag">Cloud Storage</span>
         </div>
         <div class="project-links">
-          <a href="#" class="project-link">⬡ Live Demo</a>
-          <a href="#" class="project-link">⌥ GitHub</a>
+          <a href="https://credly.com/users/gs-pankaj" target="_blank" class="project-link">🏅 Credly Badge</a>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- BLOG PREVIEW -->
+  <section id="certs">
+    <p class="section-label">// credentials</p>
+    <h2 class="section-title">Certifications</h2>
+    <div class="certs-grid">
+      <div class="cert-card"><div class="cert-icon">🔒</div><div class="cert-name">ISC2 Certified in Cybersecurity</div></div>
+      <div class="cert-card"><div class="cert-icon">☁️</div><div class="cert-name">Google Cloud Computing Foundations</div></div>
+      <div class="cert-card"><div class="cert-icon">🛡️</div><div class="cert-name">Google Cybersecurity Specialization</div></div>
+      <div class="cert-card"><div class="cert-icon">☁️</div><div class="cert-name">AWS Cloud Foundations</div></div>
+      <div class="cert-card"><div class="cert-icon">🌐</div><div class="cert-name">CCNA — Introduction to Networks</div></div>
+      <div class="cert-card"><div class="cert-icon">⚠️</div><div class="cert-name">Cisco Ethical Hacker</div></div>
+      <div class="cert-card"><div class="cert-icon">🤖</div><div class="cert-name">ML Specialization (Stanford / Coursera)</div></div>
+    </div>
+  </section>
+
   <section id="blog">
     <p class="section-label">// my writing</p>
     <h2 class="section-title">Latest Posts</h2>
     <div class="blog-grid">
-
       <a href="blog.html" class="blog-card">
-        <div class="blog-date">JAN 15, 2025</div>
-        <div class="blog-title">What I Learned Building My First Web App</div>
-        <p class="blog-excerpt">A walkthrough of the mistakes I made, the concepts that clicked, and everything I'd do differently now.</p>
+        <div class="blog-date">COMING SOON</div>
+        <div class="blog-title">What It's Like Presenting at DEF CON as a Student</div>
+        <p class="blog-excerpt">The story behind getting my dark web recon tool accepted and presented at one of the world's biggest hacking conferences.</p>
         <span class="blog-read">Read post →</span>
       </a>
-
       <a href="blog.html" class="blog-card">
-        <div class="blog-date">FEB 02, 2025</div>
-        <div class="blog-title">Understanding Git: A Beginner's Honest Take</div>
-        <p class="blog-excerpt">Git confused me for weeks. Here's the mental model that finally made it click for me.</p>
+        <div class="blog-date">COMING SOON</div>
+        <div class="blog-title">Explainable AI for Malware Detection — What I Learned</div>
+        <p class="blog-excerpt">A breakdown of SHAP, ELI5, and ALE from my Curtin University research internship — and why XAI matters for security.</p>
         <span class="blog-read">Read post →</span>
       </a>
-
       <a href="blog.html" class="blog-card">
-        <div class="blog-date">MAR 10, 2025</div>
-        <div class="blog-title">30 Days of Coding — What Actually Happened</div>
-        <p class="blog-excerpt">I tried the 30-day coding challenge. Here's an honest account of what worked and what didn't.</p>
+        <div class="blog-date">COMING SOON</div>
+        <div class="blog-title">Getting Started with Google Cloud Security</div>
+        <p class="blog-excerpt">My notes and key takeaways from the Google Cloud Computing Foundations — IAM, VPC, and beyond.</p>
         <span class="blog-read">Read post →</span>
       </a>
-
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <p class="section-label">// get in touch</p>
     <h2 class="section-title">Let's Connect</h2>
-    <p>I'm currently looking for opportunities and always happy to chat about tech, projects, or collaborations.</p>
+    <p>I'm open to internship and full-time opportunities in Cloud Security and Cybersecurity. Always happy to talk research, tools, or anything in between.</p>
     <div class="contact-links">
-      <a href="mailto:you@email.com" class="btn btn-primary">✉ Email Me</a>
-      <a href="https://github.com/yourusername" target="_blank" class="btn btn-outline">GitHub</a>
-      <a href="https://linkedin.com/in/yourprofile" target="_blank" class="btn btn-outline">LinkedIn</a>
-      <a href="https://twitter.com/yourhandle" target="_blank" class="btn btn-outline">Twitter</a>
+      <a href="mailto:gspankaj3@gmail.com" class="btn btn-primary">✉ Email Me</a>
+      <a href="https://linkedin.com/in/pankaj-g-s" target="_blank" class="btn btn-outline">LinkedIn</a>
+      <a href="https://github.com/gspankaj3" target="_blank" class="btn btn-outline">GitHub</a>
+      <a href="https://credly.com/users/gs-pankaj" target="_blank" class="btn btn-outline">Credly</a>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
-    <span>© 2025 Your Name. Built with HTML, CSS & ☕</span>
+    <span>© 2025 Gajakosh Shekar Pankaj · Hyderabad, India</span>
     <span>Hosted on GitHub Pages — free forever.</span>
   </footer>
 
