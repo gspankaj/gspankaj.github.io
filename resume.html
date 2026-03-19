@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Resume — Your Name</title>
+  <title>Resume — Pankaj G.S.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -32,128 +32,61 @@
 
     .resume-wrapper { max-width: 900px; margin: 0 auto; padding: 8rem 2.5rem 6rem; }
 
-    /* ─── HEADER ─── */
-    .resume-header {
-      display: grid; grid-template-columns: 1fr auto;
-      gap: 2rem; align-items: start;
-      padding-bottom: 3rem;
-      border-bottom: 1px solid var(--border);
-      margin-bottom: 3rem;
-    }
-    .resume-name {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 800; letter-spacing: -2px; line-height: 1;
-      margin-bottom: 0.5rem;
-    }
+    .resume-header { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: start; padding-bottom: 3rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; }
+    .resume-name { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; letter-spacing: -2px; line-height: 1; margin-bottom: 0.5rem; }
     .resume-name span { color: var(--accent); }
-    .resume-role {
-      font-family: var(--font-mono);
-      font-size: 0.85rem; color: var(--muted);
-      letter-spacing: 0.05em;
-      margin-bottom: 1.25rem;
-    }
+    .resume-role { font-family: var(--font-mono); font-size: 0.85rem; color: var(--muted); letter-spacing: 0.05em; margin-bottom: 1.25rem; }
     .resume-contacts { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .resume-contact {
-      font-family: var(--font-mono); font-size: 0.72rem;
-      padding: 0.3rem 0.75rem;
-      border: 1px solid var(--border);
-      border-radius: 2px; color: var(--muted);
-      text-decoration: none;
-      transition: all 0.2s;
-    }
+    .resume-contact { font-family: var(--font-mono); font-size: 0.72rem; padding: 0.3rem 0.75rem; border: 1px solid var(--border); border-radius: 2px; color: var(--muted); text-decoration: none; transition: all 0.2s; }
     .resume-contact:hover { border-color: var(--accent); color: var(--accent); }
-    .download-btn {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
-      background: var(--accent); color: #0d0d0d;
-      font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500;
-      border-radius: 4px; text-decoration: none;
-      transition: all 0.2s; white-space: nowrap; align-self: start;
-    }
+    .download-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: var(--accent); color: #0d0d0d; font-family: var(--font-mono); font-size: 0.8rem; font-weight: 500; border-radius: 4px; text-decoration: none; transition: all 0.2s; white-space: nowrap; align-self: start; }
     .download-btn:hover { background: #d8ff5e; transform: translateY(-2px); }
 
-    /* ─── SECTION ─── */
     .resume-section { margin-bottom: 3.5rem; }
-    .section-heading {
-      font-family: var(--font-mono); font-size: 0.7rem;
-      color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase;
-      margin-bottom: 1.75rem;
-      display: flex; align-items: center; gap: 1rem;
-    }
-    .section-heading::after {
-      content: ''; flex: 1; height: 1px; background: var(--border);
-    }
+    .section-heading { font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.75rem; display: flex; align-items: center; gap: 1rem; }
+    .section-heading::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-    /* ─── EXPERIENCE / EDUCATION ITEM ─── */
-    .resume-item {
-      display: grid; grid-template-columns: 1fr auto;
-      gap: 1rem; margin-bottom: 2.5rem;
-    }
+    .resume-item { display: grid; grid-template-columns: 1fr auto; gap: 1rem; margin-bottom: 2.5rem; }
     .item-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.2rem; }
-    .item-org { font-size: 0.9rem; color: var(--accent); margin-bottom: 0.75rem; }
-    .item-date {
-      font-family: var(--font-mono); font-size: 0.72rem;
-      color: var(--muted); white-space: nowrap; padding-top: 0.2rem;
-    }
+    .item-org { font-size: 0.9rem; color: var(--accent); margin-bottom: 0.5rem; }
+    .item-location { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); margin-bottom: 0.75rem; }
+    .item-date { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); white-space: nowrap; padding-top: 0.2rem; text-align: right; }
     .item-body { font-size: 0.9rem; color: #aaa; line-height: 1.75; }
     .item-body ul { padding-left: 1.25rem; }
     .item-body li { margin-bottom: 0.35rem; }
+    .item-body a { color: var(--accent); text-decoration: none; }
+    .item-body a:hover { text-decoration: underline; }
 
-    /* ─── SKILLS GRID ─── */
     .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; }
     .skill-group-title { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); margin-bottom: 0.75rem; letter-spacing: 0.08em; }
     .skill-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .skill-chip {
-      font-family: var(--font-mono); font-size: 0.68rem;
-      padding: 0.25rem 0.7rem;
-      border: 1px solid var(--border); border-radius: 2px;
-      color: var(--text);
-      transition: all 0.2s;
-    }
+    .skill-chip { font-family: var(--font-mono); font-size: 0.68rem; padding: 0.25rem 0.7rem; border: 1px solid var(--border); border-radius: 2px; color: var(--text); transition: all 0.2s; }
     .skill-chip:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* ─── PROJECTS ─── */
-    .project-row {
-      padding: 1.5rem;
-      border: 1px solid var(--border); border-radius: 8px;
-      margin-bottom: 1rem;
-      display: grid; grid-template-columns: 1fr auto;
-      gap: 1rem; align-items: center;
-      transition: all 0.2s;
-    }
+    .project-row { padding: 1.5rem; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 1rem; display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center; transition: all 0.2s; }
     .project-row:hover { border-color: var(--accent2); }
-    .project-row-title { font-family: var(--font-display); font-weight: 700; margin-bottom: 0.3rem; }
+    .project-row-title { font-family: var(--font-display); font-weight: 700; margin-bottom: 0.25rem; }
+    .project-row-venue { font-family: var(--font-mono); font-size: 0.68rem; color: var(--accent2); margin-bottom: 0.4rem; }
     .project-row-desc { font-size: 0.875rem; color: var(--muted); }
     .project-row-tech { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.5rem; }
-    .tech-tag {
-      font-family: var(--font-mono); font-size: 0.62rem;
-      padding: 0.15rem 0.5rem;
-      background: rgba(78,240,200,0.07);
-      color: var(--accent2); border-radius: 2px;
-    }
+    .tech-tag { font-family: var(--font-mono); font-size: 0.62rem; padding: 0.15rem 0.5rem; background: rgba(78,240,200,0.07); color: var(--accent2); border-radius: 2px; }
     .project-row-links { display: flex; flex-direction: column; gap: 0.4rem; align-items: flex-end; }
-    .proj-link {
-      font-family: var(--font-mono); font-size: 0.7rem;
-      color: var(--muted); text-decoration: none;
-      transition: color 0.2s; white-space: nowrap;
-    }
+    .proj-link { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); text-decoration: none; transition: color 0.2s; white-space: nowrap; }
     .proj-link:hover { color: var(--accent); }
 
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem 2.5rem;
-      display: flex; justify-content: space-between; align-items: center;
-      font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted);
-    }
+    .certs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.75rem; }
+    .cert-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: 6px; font-size: 0.85rem; transition: all 0.2s; }
+    .cert-item:hover { border-color: var(--accent); }
+    .cert-item span:first-child { font-size: 1rem; }
+
+    footer { border-top: 1px solid var(--border); padding: 2rem 2.5rem; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); }
 
     @media (max-width: 768px) {
       nav { padding: 1rem 1.5rem; }
       .resume-header { grid-template-columns: 1fr; }
       .resume-item { grid-template-columns: 1fr; }
-      .item-date { color: var(--muted); font-size: 0.7rem; }
       .project-row { grid-template-columns: 1fr; }
-      .project-row-links { flex-direction: row; align-items: flex-start; }
+      .project-row-links { flex-direction: row; }
       footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     }
   </style>
@@ -161,7 +94,7 @@
 <body>
 
   <nav>
-    <a href="index.html" class="nav-logo">YourName.dev</a>
+    <a href="index.html" class="nav-logo">pankaj.gs</a>
     <ul class="nav-links">
       <li><a href="index.html#about">about</a></li>
       <li><a href="index.html#projects">projects</a></li>
@@ -173,18 +106,19 @@
 
   <div class="resume-wrapper">
 
-    <!-- HEADER -->
     <div class="resume-header">
       <div>
-        <h1 class="resume-name">Your <span>Name</span></h1>
-        <p class="resume-role">// fresher developer · available for opportunities</p>
+        <h1 class="resume-name">Gajakosh <span>Shekar Pankaj</span></h1>
+        <p class="resume-role">// cloud & cybersecurity practitioner · open to opportunities</p>
         <div class="resume-contacts">
-          <a href="mailto:you@email.com" class="resume-contact">✉ you@email.com</a>
-          <a href="https://github.com/yourusername" target="_blank" class="resume-contact">⌥ github.com/yourusername</a>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank" class="resume-contact">in linkedin.com/in/yourprofile</a>
-          <span class="resume-contact">📍 Your City, India</span>
+          <a href="tel:+917396050570" class="resume-contact">📞 +91 73960 50570</a>
+          <a href="mailto:gspankaj3@gmail.com" class="resume-contact">✉ gspankaj3@gmail.com</a>
+          <a href="https://linkedin.com/in/pankaj-g-s" target="_blank" class="resume-contact">in linkedin.com/in/pankaj-g-s</a>
+          <a href="https://credly.com/users/gs-pankaj" target="_blank" class="resume-contact">🏅 credly.com/users/gs-pankaj</a>
+          <span class="resume-contact">📍 Hyderabad, Telangana</span>
         </div>
       </div>
+      <!-- Replace href with a link to your actual PDF resume if you upload one -->
       <a href="#" class="download-btn">↓ Download PDF</a>
     </div>
 
@@ -194,16 +128,29 @@
 
       <div class="resume-item">
         <div>
-          <div class="item-title">Bachelor of Technology — Computer Science</div>
-          <div class="item-org">Your University Name, Your City</div>
+          <div class="item-title">B.Tech — Information Technology</div>
+          <div class="item-org">Gokaraju Rangaraju Institute of Engineering and Technology (GRIET)</div>
+          <div class="item-location">📍 Hyderabad, Telangana</div>
           <div class="item-body">
             <ul>
-              <li>Relevant coursework: Data Structures, Algorithms, DBMS, Operating Systems, Web Technologies</li>
-              <li>CGPA: X.XX / 10</li>
+              <li>CGPA: <strong>8.87 / 10</strong></li>
+              <li>Relevant coursework: Data Structures, Algorithms, DBMS, Operating Systems, Network Security, Web Technologies</li>
             </ul>
           </div>
         </div>
-        <div class="item-date">2021 – 2025</div>
+        <div class="item-date">Oct 2022 –<br>Jul 2026<br>(Pursuing)</div>
+      </div>
+
+      <div class="resume-item">
+        <div>
+          <div class="item-title">Intermediate (MPC) — Maths, Physics, Chemistry</div>
+          <div class="item-org">Vishwa Junior College</div>
+          <div class="item-location">📍 Hyderabad, Telangana</div>
+          <div class="item-body">
+            <ul><li>Percentage: <strong>94.6%</strong></li></ul>
+          </div>
+        </div>
+        <div class="item-date">Aug 2019 –<br>Jul 2021</div>
       </div>
     </div>
 
@@ -213,31 +160,62 @@
 
       <div class="resume-item">
         <div>
-          <div class="item-title">Web Development Intern</div>
-          <div class="item-org">Company Name · Internship</div>
+          <div class="item-title">Research Intern — Malware Detection using XAI</div>
+          <div class="item-org">Curtin University</div>
+          <div class="item-location">📍 Miri, Malaysia (On-Site)</div>
           <div class="item-body">
             <ul>
-              <li>Built and maintained frontend features using HTML, CSS, and JavaScript</li>
-              <li>Collaborated with a small team using Git for version control</li>
-              <li>Reduced page load time by 20% by optimizing images and refactoring CSS</li>
+              <li>Researched a framework to extract actionable insights from black-box AI malware detection models with 90%+ accuracy using Explainable AI techniques: SHAP, ELI5, PDP, ICE, and 2D ALE.</li>
+              <li>Surfaced critical malware features and attack trends to support proactive threat hunting for security analysts.</li>
+              <li>Research preprint published: <a href="https://doi.org/10.21203/rs.3.rs-8386211/v1" target="_blank">doi.org/10.21203/rs.3.rs-8386211/v1</a></li>
             </ul>
           </div>
         </div>
-        <div class="item-date">Jun – Aug 2024</div>
+        <div class="item-date">Feb – May<br>2025</div>
       </div>
 
       <div class="resume-item">
         <div>
-          <div class="item-title">Open Source Contributor</div>
-          <div class="item-org">GitHub · Self-directed</div>
+          <div class="item-title">Delegate — Arab International Cybersecurity Conference</div>
+          <div class="item-org">DEF CON · Arab Int'l Cybersecurity Conference</div>
+          <div class="item-location">📍 Bahrain, Middle East (On-Site)</div>
           <div class="item-body">
             <ul>
-              <li>Contributed bug fixes and documentation improvements to 2 open source projects</li>
-              <li>Practiced code review, pull requests, and following contribution guidelines</li>
+              <li>Invited to present Dark Web Reconnaissance tool — a passive, automated framework for detecting credential and data leaks about companies on the dark web.</li>
+              <li>Tool crawls Tor hidden services, extracts company-related data, sends time-sensitive Telegram alerts, and provides a searchable dashboard clustering high-risk discoveries.</li>
             </ul>
           </div>
         </div>
-        <div class="item-date">2024 – present</div>
+        <div class="item-date">Nov 2025</div>
+      </div>
+
+      <div class="resume-item">
+        <div>
+          <div class="item-title">Organizing Committee Member</div>
+          <div class="item-org">Cyber Security Asia 2025 Conference</div>
+          <div class="item-location">📍 Kuala Lumpur, Malaysia</div>
+          <div class="item-body">
+            <ul>
+              <li>Part of the organizing committee for one of Southeast Asia's leading cybersecurity conferences, involving directors from MNCs and government representatives from the Middle East, SEA, UK, and Australia.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="item-date">Apr 20–22<br>2025</div>
+      </div>
+
+      <div class="resume-item">
+        <div>
+          <div class="item-title">Chair — IEEE Computational Intelligence Society</div>
+          <div class="item-org">IEEE CIS Chapter, GRIET</div>
+          <div class="item-location">📍 Hyderabad, Telangana</div>
+          <div class="item-body">
+            <ul>
+              <li>Led the IEEE CIS chapter, organising and managing 10+ technical events that bridged industry and institution.</li>
+              <li>Each event drew 100+ participants, covering topics in AI, cybersecurity, and emerging technologies.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="item-date">Dec 2023 –<br>Present</div>
       </div>
     </div>
 
@@ -247,98 +225,128 @@
 
       <div class="project-row">
         <div>
-          <div class="project-row-title">Project One Title</div>
-          <div class="project-row-desc">Short description of what it does and what problem it solves. Keep it one or two sentences.</div>
+          <div class="project-row-title">Dark Web Recon for Credential Leak Detection</div>
+          <div class="project-row-venue">▸ DEF CON · Arab Int'l Cybersecurity Conf., Bahrain — Nov 2025 (Ongoing)</div>
+          <div class="project-row-desc">Automated passive framework crawling Tor hidden services to detect credential leaks, with Telegram alerts and clustering dashboard.</div>
           <div class="project-row-tech">
-            <span class="tech-tag">HTML</span>
-            <span class="tech-tag">CSS</span>
-            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Python</span><span class="tech-tag">Scrapy</span><span class="tech-tag">NLP</span>
+            <span class="tech-tag">BeautifulSoup</span><span class="tech-tag">spaCy</span><span class="tech-tag">Telegram Bot API</span>
           </div>
         </div>
         <div class="project-row-links">
-          <a href="#" class="proj-link">⬡ Live Demo</a>
-          <a href="#" class="proj-link">⌥ GitHub</a>
+          <a href="https://github.com/gspankaj3" class="proj-link" target="_blank">⌥ GitHub</a>
         </div>
       </div>
 
       <div class="project-row">
         <div>
-          <div class="project-row-title">Project Two Title</div>
-          <div class="project-row-desc">Another project. What's the interesting part? What did you build or learn?</div>
+          <div class="project-row-title">Malware Detection using XAI for Threat Hunting</div>
+          <div class="project-row-venue">▸ Curtin University, Malaysia — Feb–May 2025</div>
+          <div class="project-row-desc">XAI framework applying SHAP, ELI5, PDP, ICE, and 2D ALE to black-box malware classifiers for explainable, proactive threat detection.</div>
           <div class="project-row-tech">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Flask</span>
-            <span class="tech-tag">SQLite</span>
+            <span class="tech-tag">Python</span><span class="tech-tag">SHAP</span><span class="tech-tag">ELI5</span>
+            <span class="tech-tag">PyALE</span><span class="tech-tag">Sklearn</span><span class="tech-tag">NumPy</span>
           </div>
         </div>
         <div class="project-row-links">
-          <a href="#" class="proj-link">⬡ Live Demo</a>
-          <a href="#" class="proj-link">⌥ GitHub</a>
+          <a href="https://doi.org/10.21203/rs.3.rs-8386211/v1" class="proj-link" target="_blank">📄 Preprint</a>
         </div>
       </div>
 
       <div class="project-row">
         <div>
-          <div class="project-row-title">Project Three Title</div>
-          <div class="project-row-desc">A third project. Focus on impact — what did it do, and why does it matter?</div>
+          <div class="project-row-title">Cloud Architecture & Deployment — Google Cloud Platform</div>
+          <div class="project-row-venue">▸ Google Cloud Computing Foundations — Oct 2024</div>
+          <div class="project-row-desc">Designed cloud architectures with Compute Engine, Cloud Storage, IAM, and VPC. Implemented access control using IAM roles and policies.</div>
           <div class="project-row-tech">
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">REST API</span>
-            <span class="tech-tag">CSS Modules</span>
+            <span class="tech-tag">GCP</span><span class="tech-tag">IAM</span><span class="tech-tag">VPC</span>
+            <span class="tech-tag">Compute Engine</span><span class="tech-tag">Cloud Storage</span>
           </div>
         </div>
         <div class="project-row-links">
-          <a href="#" class="proj-link">⬡ Live Demo</a>
-          <a href="#" class="proj-link">⌥ GitHub</a>
+          <a href="https://credly.com/users/gs-pankaj" class="proj-link" target="_blank">🏅 Badge</a>
         </div>
       </div>
     </div>
 
     <!-- SKILLS -->
     <div class="resume-section">
-      <h2 class="section-heading">Skills</h2>
+      <h2 class="section-heading">Technical Skills</h2>
       <div class="skills-grid">
         <div>
-          <div class="skill-group-title">// languages</div>
+          <div class="skill-group-title">// cloud platforms</div>
           <div class="skill-chips">
-            <span class="skill-chip">JavaScript</span>
+            <span class="skill-chip">Google Cloud Platform</span>
+            <span class="skill-chip">Compute Engine</span>
+            <span class="skill-chip">IAM</span>
+            <span class="skill-chip">VPC</span>
+            <span class="skill-chip">Cloud Storage</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-group-title">// programming</div>
+          <div class="skill-chips">
             <span class="skill-chip">Python</span>
-            <span class="skill-chip">HTML / CSS</span>
-            <span class="skill-chip">SQL</span>
+            <span class="skill-chip">C</span>
+            <span class="skill-chip">Bash</span>
           </div>
         </div>
         <div>
-          <div class="skill-group-title">// frameworks</div>
+          <div class="skill-group-title">// security tools</div>
           <div class="skill-chips">
-            <span class="skill-chip">React</span>
-            <span class="skill-chip">Flask</span>
-            <span class="skill-chip">Node.js</span>
+            <span class="skill-chip">Nessus</span>
+            <span class="skill-chip">Wireshark</span>
+            <span class="skill-chip">Burp Suite</span>
+            <span class="skill-chip">ELK Stack</span>
           </div>
         </div>
         <div>
-          <div class="skill-group-title">// tools</div>
+          <div class="skill-group-title">// networking</div>
+          <div class="skill-chips">
+            <span class="skill-chip">TCP/IP</span>
+            <span class="skill-chip">Subnetting</span>
+            <span class="skill-chip">Cisco Packet Tracer</span>
+          </div>
+        </div>
+        <div>
+          <div class="skill-group-title">// tools & os</div>
           <div class="skill-chips">
             <span class="skill-chip">Git</span>
-            <span class="skill-chip">GitHub</span>
-            <span class="skill-chip">VS Code</span>
             <span class="skill-chip">Linux</span>
+            <span class="skill-chip">Windows Active Directory</span>
           </div>
         </div>
         <div>
-          <div class="skill-group-title">// currently learning</div>
+          <div class="skill-group-title">// ML / XAI</div>
           <div class="skill-chips">
-            <span class="skill-chip">TypeScript</span>
-            <span class="skill-chip">Docker</span>
-            <span class="skill-chip">PostgreSQL</span>
+            <span class="skill-chip">SHAP</span>
+            <span class="skill-chip">ELI5</span>
+            <span class="skill-chip">PyALE</span>
+            <span class="skill-chip">Scikit-learn</span>
+            <span class="skill-chip">NumPy</span>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- CERTIFICATIONS -->
+    <div class="resume-section">
+      <h2 class="section-heading">Certifications</h2>
+      <div class="certs-grid">
+        <div class="cert-item"><span>🔒</span><span>ISC2 Certified in Cybersecurity</span></div>
+        <div class="cert-item"><span>☁️</span><span>Google Cloud Computing Foundations</span></div>
+        <div class="cert-item"><span>🛡️</span><span>Google Cybersecurity Specialization</span></div>
+        <div class="cert-item"><span>☁️</span><span>AWS Cloud Foundations</span></div>
+        <div class="cert-item"><span>🌐</span><span>CCNA — Introduction to Networks</span></div>
+        <div class="cert-item"><span>⚠️</span><span>Cisco Ethical Hacker</span></div>
+        <div class="cert-item"><span>🤖</span><span>ML Specialization (Stanford)</span></div>
       </div>
     </div>
 
   </div>
 
   <footer>
-    <span>© 2025 Your Name.</span>
+    <span>© 2025 Gajakosh Shekar Pankaj · Hyderabad, India</span>
     <a href="index.html" style="color: var(--accent); text-decoration: none; font-family: var(--font-mono); font-size: 0.72rem;">← Back to home</a>
   </footer>
 
